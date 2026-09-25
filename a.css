@@ -1,0 +1,279 @@
+/* فونت اختیاری: اگر خواستی خودت اضافه کن */
+
+/* ---------- Intro Overlay ---------- */
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #000;
+    overflow: hidden;
+  }
+  
+  .intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* اگر ویدیو تمام صفحه باید کاور باشد */
+    display: block;
+  }
+  
+  /* راهنمای لمس */
+  .intro-hint {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+  }
+  
+  .hint-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 14px 18px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+  
+  /* Fade animations */
+  .fade-out {
+    animation: fadeOut 800ms ease forwards;
+  }
+  
+  .fade-in {
+    animation: fadeIn 700ms ease forwards;
+  }
+  
+  @keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ---------- Main Content ---------- */
+  .main-content {
+    min-height: 100vh;
+  }
+  
+
+  /* افکت محو شدن کارت راهنما */
+.intro-hint {
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+  
+  .intro-hint.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap');
+
+/* پس‌زمینه لطیف کل صفحه با یک گرادیان شامپاینی ملایم */
+.wedding-wrapper {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #faf7f2 0%, #ece5d8 100%);
+  display: flex;
+  align-items: center;
+  font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+  color: #3b3633;
+}
+
+/* ساختار کارت اصلی با بورد طلایی دولایه کلاسیک */
+.wedding-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 45px 35px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(80, 60, 40, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  margin: 20px 0;
+}
+
+/* حاشیه داخلی طلایی شبیه پاکت‌نامه‌های سلطنتی */
+.wedding-card::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px dashed rgba(212, 175, 55, 0.55);
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+/* آیکون بالای نام‌ها */
+.wedding-monogram {
+  font-size: 32px;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 2px 5px rgba(212, 175, 55, 0.3));
+}
+
+.wedding-subtitle {
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  color: #9f8252;
+  margin-bottom: 6px;
+  font-weight: 300;
+}
+
+.wedding-names {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2b2520;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.wedding-tagline {
+  font-size: 0.9rem;
+  color: #8c827a;
+  margin-bottom: 20px;
+}
+
+/* خط تزیینی جداکننده */
+.wedding-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px auto;
+  width: 70%;
+}
+
+.wedding-divider::before,
+.wedding-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.6), transparent);
+}
+
+.wedding-divider .diamond {
+  width: 8px;
+  height: 8px;
+  background: #d4af37;
+  transform: rotate(45deg);
+  margin: 0 10px;
+}
+
+.wedding-text {
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: #554d46;
+  max-width: 440px;
+  margin: 0 auto 28px;
+}
+
+/* کارت‌های نمایش اطلاعات مراسم */
+.wedding-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 576px) {
+  .wedding-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-box {
+  background: #faf8f5;
+  border: 1px solid #eee7db;
+  border-radius: 14px;
+  padding: 18px 12px;
+  transition: transform 0.2s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-2px);
+}
+
+.info-box .icon {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.info-box .info-title {
+  font-size: 0.82rem;
+  color: #9e8e79;
+  margin-bottom: 4px;
+}
+
+.info-box .info-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2b2520;
+}
+
+.info-box .info-hint {
+  font-size: 0.8rem;
+  color: #7a7067;
+  margin-top: 3px;
+}
+
+/* دکمه‌های شکیل */
+.wedding-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.btn-wedding {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #dfbc47 0%, #c59214 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #836733 !important;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+}
+
+.btn-outline:hover {
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.btn-text {
+  background: transparent;
+  color: #8c827a;
+  font-size: 0.85rem;
+  padding: 8px;
+}
+
+.btn-text:hover {
+  color: #3b3633;
+}
+
+.wedding-footer {
+  margin-top: 25px;
+  font-size: 0.85rem;
+  color: #9e8e79;
+}
