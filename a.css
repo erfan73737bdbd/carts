@@ -1,0 +1,60 @@
+/* فونت اختیاری: اگر خواستی خودت اضافه کن */
+
+/* ---------- Intro Overlay ---------- */
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #000;
+    overflow: hidden;
+  }
+  
+  .intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* اگر ویدیو تمام صفحه باید کاور باشد */
+    display: block;
+  }
+  
+  /* راهنمای لمس */
+  .intro-hint {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+  }
+  
+  .hint-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 14px 18px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+  
+  /* Fade animations */
+  .fade-out {
+    animation: fadeOut 800ms ease forwards;
+  }
+  
+  .fade-in {
+    animation: fadeIn 700ms ease forwards;
+  }
+  
+  @keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ---------- Main Content ---------- */
+  .main-content {
+    min-height: 100vh;
+  }
+  
